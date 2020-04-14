@@ -23,7 +23,7 @@ public class TaskList {
 	@FindBy(xpath="//div[.='+ New Tasks']")
 	private WebElement newTasks;
 	
-	@FindBy(xpath="(//div[@class='dropdownButton'])[15]")
+	@FindBy(xpath="//div[.='- Select Customer -'and @class='selectedItem']")
 	private WebElement selectCustomer;
 	@FindBy(xpath="//div[.='- New Customer -']")
 	private WebElement taskNewCustomer;
@@ -66,6 +66,9 @@ public class TaskList {
 		PageFactory.initElements(driver, this);
 		
 	}
+	public void clickfirstcheckbox() {
+		checkBox.click();
+	}
 	public void selectMonYearBx(String month,int year) {
 		this.selectMon.click();
 		this.selectYear.click();
@@ -100,11 +103,11 @@ public class TaskList {
 	public WebElement getNewTasks() {
 		return newTasks;
 	}
-	public void getSelectCustomer() {
+	public void clickSelectCustomer() {
 	 selectCustomer.click();
 	}
-	public WebElement getTaskNewCustomer() {
-		return taskNewCustomer;
+	public void clickTaskNewCustomer() {
+		 taskNewCustomer.click();;
 	}
 	public WebElement getTaskEnterCustNameTbx() {
 		return taskEnterCustNameTbx;
